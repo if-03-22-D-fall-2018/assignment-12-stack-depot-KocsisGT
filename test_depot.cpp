@@ -32,24 +32,30 @@ TEST(add_items_to_stack)
 
 	delete_stack(stack);
 	ASSERT_EQUALS(true, memcheck_validate());
+	printf("I'm done");
 }
 
 TEST(get_items_from_stack)
 {
+	printf("start");
 	Stack stack = create_stack ();
 
 	Product products[] = {
         {1},
         {2},
         {3}
-    };
+    };printf("before 1");
 	push_stack (stack, &products[0]);
+	printf("before 2");
 	push_stack (stack, &products[1]);
+	printf("before 3");
 	push_stack (stack, &products[2]);
 
+printf("before 1");
 	ASSERT_EQUALS(((Product*)pop_stack (stack))->serial_no, 3);
+	printf("before 2");
 	ASSERT_EQUALS(((Product*)pop_stack (stack))->serial_no, 2);
-
+printf("before 3");
 	ASSERT_EQUALS(((Product*)peek_stack (stack))->serial_no, 1);
 	ASSERT_EQUALS(get_count(stack), 1);
 
