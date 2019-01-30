@@ -50,7 +50,7 @@ int get_count(Stack stack)
 
 void* pop_stack(Stack stack)
 {
-  /*if (stack->counter == 0)
+  if (stack->counter == 0)
   {
     return 0;
   }
@@ -60,10 +60,10 @@ void* pop_stack(Stack stack)
   stack->head = result->next;
   sfree(result);
   stack->counter--;
-  return data;*/
+  return data;
 }
 
 void* peek_stack(Stack stack)
 {
-  return 0;
+  return stack->head->data;
 }
